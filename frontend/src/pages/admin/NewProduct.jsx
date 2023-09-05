@@ -13,7 +13,10 @@ import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstant";
 import MetaData from "../../js/MetaData";
 import Header from "../../components/header";
-
+import AlbumOutlinedIcon from "@material-ui/icons/AlbumOutlined";
+import TodayOutlinedIcon from "@material-ui/icons/TodayOutlined";
+import DirectionsCarOutlinedIcon from "@material-ui/icons/DirectionsCarOutlined";
+import ViewCarouselOutlinedIcon from "@material-ui/icons/ViewCarouselOutlined";
 const NewProduct = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -122,7 +125,7 @@ const NewProduct = ({ history }) => {
       <MetaData title="Create Product" />
       <div className="container-fluid bg-dark pt-5">
         <Header />
-        <div className="container mt-3 ">
+        <div className="container-fluid mt-3 px-5">
           <div className="row">
             <div className="col-3">
               <SideBar />
@@ -138,124 +141,133 @@ const NewProduct = ({ history }) => {
                     <p className="big-font-m mb-3">Create Product</p>
                   </div>
 
-                  <div className="col-12 row">
-                    <div className="col-4">
-                      <SpellcheckIcon className="fs-1" />
-                      <div className="form-floating">
-                        <input
-                          type="text"
-                          placeholder="Manufacturer"
-                          required
-                          value={manufacturer}
-                          onChange={(e) => setManufacturer(e.target.value)}
-                          className="form-control"
-                          id="manufact"
-                        />
-                        <label htmlFor="manufact">ManuFacturer</label>
-                      </div>
+                  <div className="col-12 modal-body border border-2 px-3 mb-2 rounded-2">
+                    <div className=" fs-3 text-center fw-bold">
+                      Enter Car Details
                     </div>
-                    <div className="col-4">
-                      <SpellcheckIcon className="fs-1" />
-                      <div className="form-floating">
-                        <input
-                          type="text"
-                          placeholder="Model"
-                          required
-                          value={model}
-                          onChange={(e) => setModel(e.target.value)}
-                          className="form-control"
-                          id="model"
-                        />
-                        <label htmlFor="model">Model</label>
+                    <div className=" row  p-2 broder border-2">
+                      <div className="col-4">
+                        <ViewCarouselOutlinedIcon className="fs-1" />
+                        <div className="form-floating">
+                          <input
+                            type="text"
+                            placeholder="Manufacturer"
+                            required
+                            value={manufacturer}
+                            onChange={(e) => setManufacturer(e.target.value)}
+                            className="form-control"
+                            id="manufact"
+                          />
+                          <label htmlFor="manufact">ManuFacturer</label>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-4">
-                      <SpellcheckIcon className="fs-1" />
-                      <div className="form-floating">
-                        <input
-                          type="number"
-                          placeholder="Year"
-                          required
-                          value={year}
-                          onChange={(e) => setYear(e.target.value)}
-                          className="form-control"
-                          id="year"
-                        />
-                        <label htmlFor="year">Year</label>
+                      <div className="col-4">
+                        <DirectionsCarOutlinedIcon className="fs-1" />
+                        <div className="form-floating">
+                          <input
+                            type="text"
+                            placeholder="Model"
+                            required
+                            value={model}
+                            onChange={(e) => setModel(e.target.value)}
+                            className="form-control"
+                            id="model"
+                          />
+                          <label htmlFor="model">Model</label>
+                        </div>
+                      </div>
+                      <div className="col-4">
+                        <TodayOutlinedIcon className="fs-1" />
+                        <div className="form-floating">
+                          <input
+                            type="number"
+                            placeholder="Year"
+                            required
+                            value={year}
+                            onChange={(e) => setYear(e.target.value)}
+                            className="form-control"
+                            id="year"
+                          />
+                          <label htmlFor="year">Year</label>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="col-12  modal-body row mt-4">
-                    <div className="text-center">
-                      <p className="col-12  fs-3"> Engine Specification</p>
-                    </div>
-                    <div className="col-3">
-                      <SpellcheckIcon className="fs-1" />
-                      <div className="form-floating">
-                        <input
-                          type="number"
-                          placeholder="Cylinder"
-                          required
-                          value={cylinder}
-                          onChange={(e) => setCylinder(e.target.value)}
-                          className="form-control"
-                          id="cylinder"
-                        />
-                        <label htmlFor="cylinder">Number Of Cylinder</label>
+                  <div className="col-12  modal-body border border-2 px-2 rounded-2">
+                    <div className=" row mt-4">
+                      <div className="text-center">
+                        <p className="col-12 fw-bold fs-3">
+                          Engine Specification
+                        </p>
                       </div>
-                    </div>
-                    <div className="col-3">
-                      <SpellcheckIcon className="fs-1" />
-                      <div className="form-floating">
-                        <input
-                          type="number"
-                          placeholder="Size"
-                          required
-                          value={size}
-                          onChange={(e) => setSize(e.target.value)}
-                          className="form-control"
-                          id="size"
-                        />
-                        <label htmlFor="size">Engine Size</label>
+                      <div className="col-3">
+                        <AlbumOutlinedIcon className="fs-1" />
+                        <div className="form-floating">
+                          <input
+                            type="number"
+                            placeholder="Cylinder"
+                            required
+                            value={cylinder}
+                            onChange={(e) => setCylinder(e.target.value)}
+                            className="form-control"
+                            id="cylinder"
+                          />
+                          <label htmlFor="cylinder">Number Of Cylinder</label>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-3">
-                      <SpellcheckIcon className="fs-1" />
-                      <div className="form-floating">
-                        <input
-                          type="text"
-                          placeholder="TypeOfEngine"
-                          required
-                          value={typeOfEngine}
-                          onChange={(e) => setTypeOfEngine(e.target.value)}
-                          className="form-control"
-                          id="toe"
-                        />
-                        <label htmlFor="toe">Type Of Engine</label>
+                      <div className="col-3">
+                        <SpellcheckIcon className="fs-1" />
+                        <div className="form-floating">
+                          <input
+                            type="number"
+                            placeholder="Size"
+                            required
+                            value={size}
+                            onChange={(e) => setSize(e.target.value)}
+                            className="form-control"
+                            id="size"
+                          />
+                          <label htmlFor="size">Engine Size</label>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-3">
-                      <AttachMoneyIcon className="fs-1" />
-                      <div className="form-floating">
-                        <input
-                          type="number"
-                          placeholder="Price"
-                          required
-                          onChange={(e) => setPrice(e.target.value)}
-                          className="form-control"
-                          id="price"
-                        />
-                        <label htmlFor="price">Price</label>
+                      <div className="col-3">
+                        <SpellcheckIcon className="fs-1" />
+                        <div className="form-floating">
+                          <input
+                            type="text"
+                            placeholder="TypeOfEngine"
+                            required
+                            value={typeOfEngine}
+                            onChange={(e) => setTypeOfEngine(e.target.value)}
+                            className="form-control"
+                            id="toe"
+                          />
+                          <label htmlFor="toe">Type Of Engine</label>
+                        </div>
                       </div>
+                      <div className="col-3">
+                        <AttachMoneyIcon className="fs-1" />
+                        <div className="form-floating">
+                          <input
+                            type="number"
+                            placeholder="Price"
+                            required
+                            onChange={(e) => setPrice(e.target.value)}
+                            className="form-control"
+                            id="price"
+                          />
+                          <label htmlFor="price">Price</label>
+                        </div>
+                      </div>
+                      <button
+                        className="btn btn-outline-danger mx-auto w-25 my-2"
+                        onClick={() => {
+                          setEngineComp();
+                        }}
+                      >
+                        Add Engine
+                      </button>
                     </div>
-                    <button
-                      className="btn btn-outline-danger mx-auto w-25 my-2"
-                      onClick={() => {
-                        setEngineComp();
-                      }}
-                    >
-                      Add Engine
-                    </button>
                   </div>
 
                   <DescriptionIcon className="fs-1 mt-1" />
@@ -320,6 +332,7 @@ const NewProduct = ({ history }) => {
                     id="createProductBtn"
                     type="submit"
                     disabled={loading ? true : false}
+                    
                   >
                     Create
                   </Button>

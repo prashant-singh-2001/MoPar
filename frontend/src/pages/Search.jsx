@@ -19,21 +19,21 @@ const Search = () => {
 
   return (
     <>
-      <form class="container mt-0" onSubmit={searchSubmitHandler}>
-        <div class="row justify-content-center ">
-          <div class="col-md-6">
-            <div class="input-group ">
+      <form className="container mt-0" onSubmit={searchSubmitHandler}>
+        <div className="row justify-content-center ">
+          <div className="col-md-6">
+            <div className="input-group ">
               <input
                 type="text"
-                class="form-control s-2vh rounded-0"
+                className="form-control s-2vh rounded-0"
                 placeholder="Search Manufacturer..."
                 onChange={setAll}
                 id="search"
               />
 
-              <div class="input-group-append ">
+              <div className="input-group-append ">
                 <input
-                  class="btn btn-outline-warning s-2vh rounded-0"
+                  className="btn btn-outline-warning s-2vh rounded-0"
                   type="submit"
                   value={"Search"}
                 />

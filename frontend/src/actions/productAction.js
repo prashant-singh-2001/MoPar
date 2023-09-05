@@ -43,7 +43,10 @@ export const getProduct =
       dispatch({ type: ALL_PRODUCT_REQUEST });
       if (category) {
         var { data } = await axios.get(
-          `/api/v1/products?keyword=${keyword}&page=${currentPage}&category=${category}&ratings[gte]=${ratings}&engines.price[lte]=${price[0]}&engines.price[gte]=${price[1]}`
+          `/api/v1/products?keyword=${keyword}&page=${currentPage}&ratings[gte]=${ratings}&engines.price[gte]=${price[0]}&engines.price[lte]=${price[1]}&category=${category}`
+        );
+        console.log(
+          `/api/v1/products?keyword=${keyword}&page=${currentPage}&ratings[gte]=${ratings}&engines.price[gte]=${price[0]}&engines.price[lte]=${price[1]}&category=${category}`
         );
       } else {
         var { data } = await axios.get(
