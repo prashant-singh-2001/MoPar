@@ -100,6 +100,6 @@ Before running MoPar on your local machine, make sure you have the following ins
 
 Here are some screenshots of MoPar in action:
 
-![MoPar Dashboard](./screenshots/1.png)
+![MoPar Dashboard](PRojects/1.png)
 
 ![MoPar Product Page](./screenshots/product_page.png)
