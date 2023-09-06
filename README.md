@@ -46,8 +46,8 @@ Before running MoPar on your local machine, make sure you have the following ins
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/mopar.git
-   ```
+[   git clone https://github.com/yourusername/mopar.git
+](https://github.com/prashant-singh-2001/MoPar.git)   ```
 2. Navigate to Frontend
    ```bash
    cd ./frontend
