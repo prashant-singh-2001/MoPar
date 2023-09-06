@@ -67,7 +67,7 @@ Before running MoPar on your local machine, make sure you have the following ins
    npm run dev
    ```
 6. Start frontend
-   ``bash
+   ```bash
    npm start
    ```
  ## Usage
