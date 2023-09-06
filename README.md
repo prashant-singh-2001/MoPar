@@ -102,6 +102,17 @@ Here are some screenshots of MoPar in action:
 
 ![MoPar Dashboard](https://github.com/prashant-singh-2001/MoPar/assets/91481645/dda9c919-1528-49ab-8f8f-ca9bda633036)
 
-
 ![MoPar Product Page](https://github.com/prashant-singh-2001/MoPar/assets/91481645/dd63e9c2-ed81-4c7d-9684-62fa1d5e158c)
+
+![5](https://github.com/prashant-singh-2001/MoPar/assets/91481645/4afe8833-8de7-4049-9c87-9ad4ab6630b6)
+
+![10](https://github.com/prashant-singh-2001/MoPar/assets/91481645/12ce4b6a-6ace-44bd-a5c1-5949ccd03dc5)
+
+![9](https://github.com/prashant-singh-2001/MoPar/assets/91481645/182392b9-83e7-4583-b5e2-22a84c711db8)
+
+![8](https://github.com/prashant-singh-2001/MoPar/assets/91481645/876349a3-d65c-475e-9046-e45a43c4cef4)
+
+![7](https://github.com/prashant-singh-2001/MoPar/assets/91481645/36283422-c2e8-465d-8331-548e4bdb3649)
+
+![6](https://github.com/prashant-singh-2001/MoPar/assets/91481645/b95d2d9f-60e0-4c50-8a86-fcb0564fd439)
 
