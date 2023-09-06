@@ -4,6 +4,7 @@ MoPar is a feature-rich car selling eCommerce platform developed using the MERN 
 
 ![MoPar Screenshot](frontend/public/assets/img/MoPar-logos_transparent.png)
 
+
 ## Table of Contents
 
 1. [Features](#features)
