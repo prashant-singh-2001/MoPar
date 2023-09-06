@@ -49,7 +49,7 @@ Before running MoPar on your local machine, make sure you have the following ins
    ```
 2. Navigate to Frontend
    ```bash
-   cd ./backend
+   cd ./frontend
    ```
 4. Navigate to Backend
    ```bash
