@@ -113,7 +113,7 @@ const ProductList = ({ history }) => {
       rows.push({
         id: item._id,
         stock: item.Stock,
-        price: "£ " + item.engines[0].price,
+        price: "£ " + (item.engines.length !== 0 ? item.engines[0].price : ""),
         name: item.manufacturer + " " + item.model,
       });
     });

@@ -7,7 +7,6 @@ import { Button } from "@material-ui/core";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import DescriptionIcon from "@material-ui/icons/Description";
 import StorageIcon from "@material-ui/icons/Storage";
-import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstant";
@@ -17,10 +16,14 @@ import AlbumOutlinedIcon from "@material-ui/icons/AlbumOutlined";
 import TodayOutlinedIcon from "@material-ui/icons/TodayOutlined";
 import DirectionsCarOutlinedIcon from "@material-ui/icons/DirectionsCarOutlined";
 import ViewCarouselOutlinedIcon from "@material-ui/icons/ViewCarouselOutlined";
-const NewProduct = ({ history }) => {
+import BuildIcon from "@material-ui/icons/Build";
+import MergeTypeIcon from "@material-ui/icons/MergeType";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+const NewProduct = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
-
+  const navigate = useNavigate();
   const { loading, error, success } = useSelector((state) => state.newProduct);
 
   const [manufacturer, setManufacturer] = useState("");
@@ -35,14 +38,7 @@ const NewProduct = ({ history }) => {
   const [size, setSize] = useState(0);
   const [cylinder, setCylinder] = useState(0);
   const [typeOfEngine, setTypeOfEngine] = useState("");
-  const [engines, setEngines] = useState([
-    {
-      size: 0.0,
-      cylinder: 0,
-      typeOfEngine: "",
-      price: 0,
-    },
-  ]);
+  const [engines, setEngines] = useState([]);
   const setEngineComp = () => {
     const newEngine = {
       size,
@@ -74,10 +70,10 @@ const NewProduct = ({ history }) => {
 
     if (success) {
       alert.success("Product Created Successfully");
-      history.push("/admin/dashboard");
+      navigate("/admin/dashboard");
       dispatch({ type: NEW_PRODUCT_RESET });
     }
-  }, [dispatch, alert, error, history, success]);
+  }, [dispatch, alert, error, navigate, success]);
 
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
@@ -86,7 +82,7 @@ const NewProduct = ({ history }) => {
 
     myForm.set("manufacturer", manufacturer);
     myForm.set("model", model);
-    myForm.set("model", year);
+    myForm.set("year", year);
     myForm.set("price", price);
     myForm.set("description", description);
     myForm.set("category", category);
@@ -195,10 +191,35 @@ const NewProduct = ({ history }) => {
                   </div>
                   <div className="col-12  modal-body border border-2 px-2 rounded-2">
                     <div className=" row mt-4">
-                      <div className="text-center">
-                        <p className="col-12 fw-bold fs-3">
+                      <div className="col-12 ">
+                        <p className="text-center fw-bold fs-3">
                           Engine Specification
                         </p>
+                        <hr className="border border-2"></hr>
+
+                        <div className="row my-2">
+                          <p className=" fw-bold fs-4">Added Engines</p>
+                          {engines.length !== 0 ? (
+                            <>
+                              {engines.map((e) => {
+                                return (
+                                  <div className="fs-5 col-12">
+                                    {e.cylinder +
+                                      " Cylinders " +
+                                      e.size +
+                                      " Liter " +
+                                      e.typeOfEngine +
+                                      " Type for £" +
+                                      e.price}
+                                  </div>
+                                );
+                              })}
+                            </>
+                          ) : (
+                            <div className="fs-5">No Engines Added yet!</div>
+                          )}
+                        </div>
+                        <hr className="border border-2"></hr>
                       </div>
                       <div className="col-3">
                         <AlbumOutlinedIcon className="fs-1" />
@@ -206,7 +227,6 @@ const NewProduct = ({ history }) => {
                           <input
                             type="number"
                             placeholder="Cylinder"
-                            required
                             value={cylinder}
                             onChange={(e) => setCylinder(e.target.value)}
                             className="form-control"
@@ -216,12 +236,11 @@ const NewProduct = ({ history }) => {
                         </div>
                       </div>
                       <div className="col-3">
-                        <SpellcheckIcon className="fs-1" />
+                        <BuildIcon className="fs-1" />
                         <div className="form-floating">
                           <input
                             type="number"
                             placeholder="Size"
-                            required
                             value={size}
                             onChange={(e) => setSize(e.target.value)}
                             className="form-control"
@@ -231,12 +250,11 @@ const NewProduct = ({ history }) => {
                         </div>
                       </div>
                       <div className="col-3">
-                        <SpellcheckIcon className="fs-1" />
+                        <MergeTypeIcon className="fs-1" />
                         <div className="form-floating">
                           <input
                             type="text"
                             placeholder="TypeOfEngine"
-                            required
                             value={typeOfEngine}
                             onChange={(e) => setTypeOfEngine(e.target.value)}
                             className="form-control"
@@ -251,7 +269,6 @@ const NewProduct = ({ history }) => {
                           <input
                             type="number"
                             placeholder="Price"
-                            required
                             onChange={(e) => setPrice(e.target.value)}
                             className="form-control"
                             id="price"
@@ -259,14 +276,14 @@ const NewProduct = ({ history }) => {
                           <label htmlFor="price">Price</label>
                         </div>
                       </div>
-                      <button
+                      <Link
                         className="btn btn-outline-danger mx-auto w-25 my-2"
                         onClick={() => {
                           setEngineComp();
                         }}
                       >
                         Add Engine
-                      </button>
+                      </Link>
                     </div>
                   </div>
 
@@ -312,13 +329,14 @@ const NewProduct = ({ history }) => {
                     <label className="stock">Stock</label>
                   </div>
 
-                  <div className="btn btn-outline-dark-no">
+                  <div className="my-2">
                     <input
                       type="file"
                       name="avatar"
                       accept="image/*"
                       onChange={createProductImagesChange}
                       multiple
+                      className="form-control p-3"
                     />
                   </div>
 
@@ -332,7 +350,6 @@ const NewProduct = ({ history }) => {
                     id="createProductBtn"
                     type="submit"
                     disabled={loading ? true : false}
-                    
                   >
                     Create
                   </Button>
