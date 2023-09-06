@@ -48,11 +48,11 @@ Before running MoPar on your local machine, make sure you have the following ins
    git clone https://github.com/yourusername/mopar.git
    ```
 2. Navigate to project
-  2.1. Frontend
+  1. Frontend
    ```bash
    cd ./backend
    ```
-  2.2. Backend
+  2. Backend
    ```bash
    cd ./backend
    ```
