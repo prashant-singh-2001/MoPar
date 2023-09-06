@@ -95,6 +95,7 @@ Before running MoPar on your local machine, make sure you have the following ins
 - Stripe
 - Axios
 - Nodemailer
+![1](https://github.com/prashant-singh-2001/MoPar/assets/91481645/b99acf03-b4fd-4611-bb7b-34a8dba7855f)
 
 ## Screenshots
 
