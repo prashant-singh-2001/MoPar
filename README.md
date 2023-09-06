@@ -2,7 +2,7 @@
 
 MoPar is a feature-rich car selling eCommerce platform developed using the MERN stack (MongoDB, Express.js, React, Node.js). It provides a seamless experience for buying and selling cars online. With powerful features like cloudinary for images, Redux for frontend management, nodemailer, Material UI, Bootstrap, Stripe for payment management, and Axios for connections, MoPar offers an exceptional online car shopping experience.
 
-![MoPar Screenshot](./MoPar/frontend/public/assets/img/MoPar-logos_transparent.png)
+![MoPar Screenshot](.frontend/public/assets/img/MoPar-logos_transparent.png)
 
 ## Table of Contents
 
