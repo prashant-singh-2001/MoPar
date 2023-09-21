@@ -67,10 +67,10 @@ const Profile = () => {
           <ModalTop />
           <MetaData title={user.name} />
           <div className="bg-dark">
-            <div className="container p-3">
+            <div className="container-fluid p-3">
               <Header />
               <div className="row text-light " style={{ paddingTop: "10vh" }}>
-                <div className="col-4 ms-3">
+                <div className="col-3 ms-5">
                   <h1 className="fw-bold fs-3">{user.name}'s Profile</h1>
                   <img
                     src={user.avatar.url}
@@ -144,7 +144,7 @@ const Profile = () => {
                     </form>
                   </div>
                 </div>
-                <div className="col-7 mx-3">
+                <div className="col-8 mx-2">
                   <div className="row">
                     <div className="col-3">
                       <h4>Full Name</h4>

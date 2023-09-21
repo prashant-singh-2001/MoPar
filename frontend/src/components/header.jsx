@@ -37,7 +37,11 @@ const Header = (props) => {
           }
         >
           <Image
-            imageUrl={"../assets/img/MoPar-white.png"}
+            imageUrl={
+              props.isAdmin
+                ? "../../assets/img/MoPar-white.png"
+                : "../assets/img/MoPar-white.png"
+            }
             alertnate={"MoPar"}
             Wid={"80"}
             Hei={"40"}

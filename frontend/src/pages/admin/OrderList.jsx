@@ -16,6 +16,7 @@ import {
 } from "../../actions/orderAction";
 import { DELETE_ORDER_RESET } from "../../constants/orderConstant";
 import Header from "../../components/header";
+import FootFet from "../../components/footFet";
 
 const OrderList = ({ history }) => {
   const dispatch = useDispatch();
@@ -125,13 +126,13 @@ const OrderList = ({ history }) => {
 
       <div className="container-fluid bg-dark pt-5">
         <Header />
-        <div className="container pt-2">
+        <div className="pt-2">
           <div className="row">
-            <div className="col-3">
+            <div className="ms-5 col-2">
               {" "}
               <SideBar />
             </div>
-            <div className="col-9 card rounded-3">
+            <div className="ms-4 col-9 card rounded-3">
               <h1 id="productListHeading">ALL ORDERS</h1>
 
               <DataGrid
@@ -145,6 +146,7 @@ const OrderList = ({ history }) => {
             </div>
           </div>
         </div>
+        <FootFet white={true} />
       </div>
     </Fragment>
   );

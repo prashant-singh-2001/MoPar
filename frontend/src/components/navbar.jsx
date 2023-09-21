@@ -1,8 +1,9 @@
 import React from "react";
 import Links from "./Links";
 import { Link } from "react-router-dom";
-import Image from "./Image";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCartOutlined";
+import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
+import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 
 const Navbar = (props) => {
   var link = ["View Catalogue"];
@@ -38,11 +39,7 @@ const Navbar = (props) => {
             to="/ViewCatalogue/#search"
             className="nav-link btn btn-outline-dark btn-outline-dark-no"
           >
-            <Image
-              classses={"img-fluid"}
-              imageUrl={"../assets/img/feather-light/search.svg"}
-              Hei={"25px"}
-            />
+            <SearchOutlinedIcon />
           </Link>
         </div>
       </div>
@@ -50,12 +47,11 @@ const Navbar = (props) => {
         ButtonClasses="btn btn-outline-dark btn-outline-dark-no"
         IsLogin={true}
       /> */}
-      <Link className="btn btn-outline-dark btn-outline-dark-no" to="/login">
-        <Image
-          alternate={"Login"}
-          imageUrl={"../assets/Feather-light/user.svg"}
-          Hei={"25px"}
-        />
+      <Link
+        className="nav-link btn btn-outline-dark btn-outline-dark-no"
+        to="/login"
+      >
+        <AccountCircleOutlinedIcon />
       </Link>
     </div>
   );

@@ -25,6 +25,8 @@ import Dashboard from "./pages/admin/Dashboard.jsx";
 import ProductList from "./pages/admin/ProductList";
 import NewProduct from "./pages/admin/NewProduct";
 import OrderList from "./pages/admin/OrderList";
+import ProcessOrder from "./pages/admin/ProcessOrder";
+import UsersList from "./pages/admin/UsersList";
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
@@ -76,6 +78,26 @@ function App() {
             element={
               isAuthenticated === true && user.role === "admin" ? (
                 <Dashboard />
+              ) : (
+                <UserAuth />
+              )
+            }
+          />
+          <Route
+            path="/admin/order/:id"
+            element={
+              isAuthenticated === true && user.role === "admin" ? (
+                <ProcessOrder />
+              ) : (
+                <UserAuth />
+              )
+            }
+          />
+          <Route
+            path="/admin/users"
+            element={
+              isAuthenticated === true && user.role === "admin" ? (
+                <UsersList />
               ) : (
                 <UserAuth />
               )

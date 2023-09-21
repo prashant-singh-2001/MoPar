@@ -76,13 +76,13 @@ const Dashboard = () => {
         {UL || PL || OL ? (
           <Loader />
         ) : (
-          <div className="container   mt-5" style={{ overflowX: "none" }}>
+          <div className="container-fluid   mt-5" style={{ overflowX: "none" }}>
             <div className="row">
-              <div className="col-4">
+              <div className="col-3">
                 <Sidebar />
               </div>
 
-              <div className="col-8">
+              <div className="col-9">
                 <div className="card">
                   <Typography className="fs-1 card-header text-center">
                     Dashboard
