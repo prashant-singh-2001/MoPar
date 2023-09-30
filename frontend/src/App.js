@@ -27,6 +27,7 @@ import NewProduct from "./pages/admin/NewProduct";
 import OrderList from "./pages/admin/OrderList";
 import ProcessOrder from "./pages/admin/ProcessOrder";
 import UsersList from "./pages/admin/UsersList";
+import UpdateUser from "./pages/admin/UpdateUser";
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
@@ -98,6 +99,16 @@ function App() {
             element={
               isAuthenticated === true && user.role === "admin" ? (
                 <UsersList />
+              ) : (
+                <UserAuth />
+              )
+            }
+          />
+          <Route
+            path="/admin/user/:userId"
+            element={
+              isAuthenticated === true && user.role === "admin" ? (
+                <UpdateUser />
               ) : (
                 <UserAuth />
               )
